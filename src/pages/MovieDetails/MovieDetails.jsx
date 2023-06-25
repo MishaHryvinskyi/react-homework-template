@@ -78,7 +78,7 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <Link to={backLinkLocationRef.current} style={{ color: 'orange', textDecoration: 'none', backgroundColor: gr }}>Back</Link>
+      <Link to={backLinkLocationRef.current} style={{ color: 'orange', textDecoration: 'none' }}>Back</Link>
       {movieDetails ? (
         <ContainerMovie>
             <MovieImg
