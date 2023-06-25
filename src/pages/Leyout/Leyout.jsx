@@ -6,10 +6,36 @@ const Leyout = () => {
         <nav>
             <LeyoutList>
                 <LeyoutItem>
-                    <NavLink to="/" style={{ color: 'white', textDecoration: 'none' }}>Home</NavLink>
+                    <NavLink 
+                        to="/" 
+                        style={{ 
+                            color: '#453953', 
+                            textDecoration: 'none',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            padding: '10px',
+                            fontSize: '20px',
+                            fontWeight: '600'
+                        }}>
+                            Home
+                    </NavLink>
                 </LeyoutItem>
                 <LeyoutItem>
-                    <NavLink to="/movies" style={{ color: 'white', textDecoration: 'none' }}>Movies</NavLink>
+                    <NavLink 
+                        to="/movies" 
+                        style={{ 
+                            color: '#453953', 
+                            textDecoration: 'none',
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            padding: '10px',
+                            fontSize: '20px',
+                            fontWeight: '600'
+                        }}>
+                            Movies
+                    </NavLink>
                 </LeyoutItem>
             </LeyoutList>
         </nav>

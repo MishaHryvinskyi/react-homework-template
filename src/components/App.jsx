@@ -5,10 +5,11 @@ import MovieDetails from "../pages/MovieDetails/MovieDetails";
 import Cast from "../components/Cast/Cast";
 import Reviews from "../components/Reviews/Review";
 import Leyout from "../pages/Leyout/Leyout";
+import { MainContainer } from './App.styled';
 
 export const App = () => {
   return (
-    <div>
+    <MainContainer>
       <Routes>
         <Route path="/" element={<Leyout />}>
           <Route index element={<Home />} />
@@ -19,6 +20,6 @@ export const App = () => {
           </Route>
         </Route>
       </Routes>
-    </div>
+    </MainContainer>
   );
 };

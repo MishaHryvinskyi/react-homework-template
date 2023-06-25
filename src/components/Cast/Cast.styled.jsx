@@ -4,7 +4,6 @@ export const CastContainer = styled.div`
     display: flex;
     flex-direction: column;
     padding: 40px;
-    background-color: #453953;
 `;
 
 export const TitleCast = styled.h2`
@@ -27,6 +26,11 @@ export const CastListItem = styled.li`
     margin-bottom: 10px;
     background-color: #975a5e;
     border-radius: 10px;
+    
+    &:hover {
+        box-shadow: -1px 1px 29px -10px rgba(211, 214, 219, 1);
+        -moz-box-shadow: -1px 1px 29px -10px rgba(211, 214, 219, 1);
+    }
 `;
 
 export const CastImg = styled.img`

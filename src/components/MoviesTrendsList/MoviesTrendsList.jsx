@@ -32,7 +32,7 @@ const MoviesTrendsList = () => {
       <MovieTitle>Trending Movies Today</MovieTitle>
       <MovieTrendList>
         {movies.map(movie => (
-          <Link key={movie.id} to={`/movies/${movie.id}`}>
+          <Link key={movie.id} to={`/movies/${movie.id}`} style={{ textDecoration: 'none', }}>
             <MovieTrendListItem>
               <MovieTrendImg
                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}

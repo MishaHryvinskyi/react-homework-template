@@ -10,15 +10,16 @@ import {
   ContainerWrap,
   ParagraphMovie,
   ItemLink,
-  ListLink
+  ListLink,
+  ContainerLink
  } from './MovieDetails.styled';
 
 const linkStyle = {
   color: '#f3cba5',
   textDecoration: 'none',
-  ':hover': {
-    color: 'red',
-  },
+  fontSize: '20',
+  fontWeight: '600',
+  padding: '10px'
 };
 
 const MovieDetails = () => {
@@ -78,7 +79,23 @@ const MovieDetails = () => {
 
   return (
     <div>
-      <Link to={backLinkLocationRef.current} style={{ color: 'orange', textDecoration: 'none' }}>Back</Link>
+      <ContainerLink>
+        <Link 
+          to={backLinkLocationRef.current} 
+          style={{ 
+            color: '#453953', 
+            textDecoration: 'none',
+            padding: '10px',
+            backgroundColor: '#f3cba5',
+            width: '100px',
+            fontSize: '20px',
+            fontWeight: '600',
+            borderRadius: '10px',
+            textAlign: 'center' 
+            }}>
+              Back
+        </Link>
+      </ContainerLink>
       {movieDetails ? (
         <ContainerMovie>
             <MovieImg

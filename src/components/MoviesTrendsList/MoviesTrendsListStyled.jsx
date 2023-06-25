@@ -10,7 +10,6 @@ export const ContainerMovie = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #453953;
     padding: 20px;
 `;
 
@@ -48,7 +47,7 @@ export const MovieTrendImg = styled.img`
     -moz-box-shadow: -1px 1px 49px -10px rgba(211,214,219,1);
     box-shadow: -1px 1px 49px -10px rgba(211,214,219,1);
     &:hover {
-        transform: scale(1.1); 
+        transform: scale(1.05); 
         box-shadow:  -1px 1px 49px -10px rgba(243,203,165,1);
         -moz-box-shadow: -1px 1px 49px -10px rgba(243,203,165,1);
         box-shadow: -1px 1px 49px -10px rgba(243,203,165,1);

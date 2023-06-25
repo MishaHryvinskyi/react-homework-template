@@ -3,7 +3,13 @@ import styled from "@emotion/styled";
 export const ContainerMovie = styled.div`
     display: flex;
     padding: 80px;
-    background-color: #453953;
+`;
+
+export const ContainerLink = styled.div`
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    padding-top: 50px;
 `;
 
 export const MovieTitle = styled.h1`
@@ -50,4 +56,12 @@ export const ItemLink = styled.li`
     margin-left: 30px;
     padding:  10px 20px;
     border-radius: 10px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        background-color: #a55233;
+        transform: scale(1.05);
+        box-shadow: -1px 1px 29px -10px rgba(211, 214, 219, 1);
+        -moz-box-shadow: -1px 1px 29px -10px rgba(211, 214, 219, 1);
+    }
 `;
