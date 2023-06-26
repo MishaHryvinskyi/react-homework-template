@@ -1,31 +1,45 @@
-import React, { Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
-import { MainContainer } from '../App.styled';
-
-const Home = React.lazy(() => import('../../pages/Home'));
-const Movies = React.lazy(() => import('../../pages/Movie/Movies'));
-const MovieDetails = React.lazy(() => import('../../pages/MovieDetails/MovieDetails'));
-const Cast = React.lazy(() => import('../../components/Cast/Cast'));
-const Reviews = React.lazy(() => import('../../components/Reviews/Review'));
-const Leyout = React.lazy(() => import('../../pages/Leyout/Leyout'));
-
-const App = () => {
+import React, { useEffect, useState } from 'react';
+import { getTrendsDayMovies } from '../API/API';
+import { Link } from 'react-router-dom';
+import { 
+    ContainerMovie,
+    MovieTrendList,
+    MovieTrendListItem, 
+    MovieTrendImg,
+    MovieTrendTitle,
+    MovieTitle 
+} from './MoviesTrendsListStyled';
+const MoviesTrendsList = () => {
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    const fetchTrendsDayMovies = async () => {
+      try {
+        const response = await getTrendsDayMovies();
+        const moviesData = response.data.results;
+        setMovies(moviesData);
+      } catch (error) {
+        console.error('Error fetching trend day movies:', error);
+      }
+    };
+    fetchTrendsDayMovies();
+  }, []);
   return (
-    <MainContainer>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-          <Route path="/" element={<Leyout />}>
-            <Route index element={<Home />} />
-            <Route path="movies" element={<Movies />} />
-            <Route path="movies/:movieId" element={<MovieDetails />}>
-              <Route path="cast" element={<Cast />} />
-              <Route path="reviews" element={<Reviews />} />
-            </Route>
-          </Route>
-        </Routes>
-      </Suspense>
-    </MainContainer>
+    <ContainerMovie>
+      <MovieTitle>Trending Movies Today</MovieTitle>
+      <MovieTrendList>
+        {movies.map(movie => (
+          <Link key={movie.id} to={`/movies/${movie.id}`} style={{ textDecoration: 'none', }}>
+            <MovieTrendListItem>
+              <MovieTrendImg
+                src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                alt={movie.title}
+              />
+              <MovieTrendTitle>{movie.title}</MovieTrendTitle>
+            </MovieTrendListItem>
+          </Link>
+        ))}
+      </MovieTrendList>
+    </ContainerMovie>
   );
 };
-
-export default App;
+export default MoviesTrendsList;
